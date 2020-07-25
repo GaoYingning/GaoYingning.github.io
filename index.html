@@ -174,8 +174,36 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><h2>作用域</h2>
-<p>内存</p>
+        <h2 id="RegExp类型"><a href="#RegExp类型" class="headerlink" title="RegExp类型"></a>RegExp类型</h2><p><code>ECMAScript</code>通过<code>Regexp</code>类型来支持正则表达式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express=<span class="regexp">/ pattern /</span> flags;</span><br></pre></td></tr></table></figure>
+<h3 id="正则表达式的匹配模式支持下列3个标志"><a href="#正则表达式的匹配模式支持下列3个标志" class="headerlink" title="正则表达式的匹配模式支持下列3个标志"></a>正则表达式的匹配模式支持下列3个标志</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g:表示全局（global）模式，即模式被应用于所有字符串，而不是在遇到第一个匹配项立即停止</span><br><span class="line">i：表示不区分大小写（case-insensitive)模式</span><br><span class="line">m：表示多行（multiline）模式，即在一行到达文本末尾时还会继续查找下一行</span><br></pre></td></tr></table></figure>
+<h3 id="模式中使用的所有元字符都必须转义，元字符包括"><a href="#模式中使用的所有元字符都必须转义，元字符包括" class="headerlink" title="模式中使用的所有元字符都必须转义，元字符包括"></a>模式中使用的所有元字符都必须转义，元字符包括</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">( [ &#123; \ ^ $ | ? * + .&#125; ] )</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建正则表达式两种方式"><a href="#创建正则表达式两种方式" class="headerlink" title="创建正则表达式两种方式"></a>创建正则表达式两种方式</h3><p>字面量模式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pattern1=<span class="regexp">/[bc]at/i</span>;</span><br></pre></td></tr></table></figure>
+<p><code>RegExp</code>构造函数模式：接收两个参数，一个是匹配的字符串模式，一个是可选的标志字符串</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pattern2=<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"[bc]at"</span>,<span class="string">"i"</span>);</span><br></pre></td></tr></table></figure>
+<p>在<code>ECMAScript3</code>中，字面量模式始终会共享一个<code>RegExp</code>实例，而使用构造函数创建的每一个新<code>RegExp</code>实例都是一个新实例，在<code>ECMAScript5</code>中明确字面量修改为每次都创建<code>RegExp</code>实例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> re=<span class="literal">null</span>,</span><br><span class="line">    i;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">    re=<span class="regexp">/cat/g</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(re.test(<span class="string">"catastrophe"</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">    re=<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"cat"</span>,<span class="string">"g"</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(re.test(<span class="string">"catastrophe"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="RegExp实例属性"><a href="#RegExp实例属性" class="headerlink" title="RegExp实例属性"></a>RegExp实例属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">global:布尔值，表示是否设置了g标志</span><br><span class="line">ignoreCase:布尔值，表示是否设置了i标志</span><br><span class="line">lastIndex:整数，表示开始搜索下一个匹配项的字符位置，从0算起</span><br><span class="line">multiline：布尔值，表示是否设置了m标志</span><br><span class="line">source：正则表达式的字符串表示，按照字面量形式而非传入构造函数中的字符串模式返回</span><br></pre></td></tr></table></figure>
+
+<h3 id="RegExp实例方法"><a href="#RegExp实例方法" class="headerlink" title="RegExp实例方法"></a>RegExp实例方法</h3><p>捕获组：把正则表达式中子表达式匹配的结果，分组按顺序保存，之后可以通过序号或名称来使用这些内容。目前，js只能通过序号访问。</p>
+<p><code>RegExp</code>对象的主要方法为<code>exec()</code>，该方法主要为捕获组，接收一个要应用模式的字符串，返回包含第一个匹配项信息的数组，返回的数组为Array的实例，包含额外的两个属性：<code>index</code>和<code>input</code>，<code>index</code>表示匹配项在字符串中的位置，<code>input</code>表示应用正则表达式的字符串。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> text=<span class="string">"mom and dad and baby"</span>;</span><br><span class="line"><span class="keyword">var</span> pattern= <span class="regexp">/mom( and dad( and baby)?)?/gi</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> matches=pattern.exec(text);</span><br><span class="line"><span class="built_in">console</span>.log(matches.index) <span class="comment">//0</span></span><br><span class="line"><span class="built_in">console</span>.log(matches.input) <span class="comment">//"mom and dad and baby"</span></span><br><span class="line"><span class="built_in">console</span>.log(matches[<span class="number">0</span>])     <span class="comment">//"mom and dad and baby"</span></span><br><span class="line"><span class="built_in">console</span>.log(matches[<span class="number">1</span>])     <span class="comment">//"and dad and baby"</span></span><br><span class="line"><span class="built_in">console</span>.log(matches[<span class="number">2</span>])     <span class="comment">//" and baby"</span></span><br></pre></td></tr></table></figure>
+<p>对于<code>exec()</code>方法，在同一个字符串上调用多次<code>exex()</code>方法，若不设置g标志，每次都会返回第一个匹配项的信息，<code>lastIndex</code>始终保持不变，若设置了全局标志，每次都会在字符串中继续查找新的匹配项，<code>lastIndex</code>会变化。</p>
+<p><code>RegExp</code>中的另一个方法<code>test()</code>接收一个字符串参数。在模式与参数匹配情况下返回<code>true</code>，否则返回<code>false</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> text=<span class="string">"000-00-0000"</span>;</span><br><span class="line"><span class="keyword">var</span> pattern=<span class="regexp">/\d&#123;3&#125;-\d&#123;2&#125;-\d&#123;4&#125;/</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(pattern.test(text))&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"matched"</span>);<span class="comment">//matched</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>RegExp</code>实例继承的<code>toLocaleString()</code>和<code>toString()</code>方法都会返回正则表达式的字面量，与创建方式无关。<br>正则表达式的<code>valueOf()</code>方法返回正则表达式本身。</p>
+<h3 id="RegExp构造函数属性"><a href="#RegExp构造函数属性" class="headerlink" title="RegExp构造函数属性"></a>RegExp构造函数属性</h3><p>这些属性适用于作用域中的所有正则表达式，并且给予所执行的最佳一次正则表达式操作而变化。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">input           最近一次要匹配的字符串</span><br><span class="line">lastMatch       最近一次的匹配项</span><br><span class="line">lastParen       最近一次匹配的捕获组</span><br><span class="line">leftContext     input字符串中lastMatch之前的文本</span><br><span class="line">multiline       布尔值，表示是否表达式都使用多行表示</span><br><span class="line">rightContext    input字符串中lastMathch之后的文本</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> text=<span class="string">"this has been a short summary"</span>;</span><br><span class="line"><span class="keyword">var</span> pattern=<span class="regexp">/(.)hort/g</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*opera不支持input lastmatch lastparen multiline</span></span><br><span class="line"><span class="comment">*ie 不支持multiline</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">if</span>(pattern.test(text))&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">RegExp</span>.input);          <span class="comment">//this has been a short summary</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">RegExp</span>.leftContext);    <span class="comment">//this has been a</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">RegExp</span>.rightContext);   <span class="comment">//summary</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">RegExp</span>.lastMatch)       <span class="comment">//short</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">RegExp</span>.lastParen)       <span class="comment">//s</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">RegExp</span>.multiline)       <span class="comment">//false       chrome中为undefined</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>除以上几个属性外，还要9个用于存储捕获组的构造函数属性，为<code>RegExp.$1</code>,<code>RegExp.$2</code>…<code>RegExp.$9</code>。调用<code>exec()</code>和<code>test()</code>时，这些属性会被自动填充。</p>
+<h3 id="模式的局限性"><a href="#模式的局限性" class="headerlink" title="模式的局限性"></a>模式的局限性</h3><p><code>ECMAScript</code>中的正则表达式缺少了某些高级特性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.匹配字符串开始和结尾的\A和\Z锚</span><br><span class="line">2.向后查找</span><br><span class="line">3.并集和交集类</span><br><span class="line">4.原子组</span><br><span class="line">5.Unicode支持(单个字符除外，如\uFFFF)</span><br><span class="line">6.命名的捕获组</span><br><span class="line">7.s(single,单行) 和x(free-spacing,无间隔) 匹配模式</span><br><span class="line">8.条件匹配</span><br><span class="line">9.正则表达式注释</span><br></pre></td></tr></table></figure>
       
 
       
@@ -183,7 +211,33 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">正则表达式</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/js//" class="article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -393,6 +447,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
               </li>
             
             <div class="clearfix"></div>
