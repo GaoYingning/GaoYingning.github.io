@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>js复习 | 啥都不会啊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="RegExp类型ECMAScript通过Regexp类型来支持正则表达式 1var express&#x3D;&#x2F; pattern &#x2F; flags;">
+  <meta name="description" content="RegExp类型ECMAScript通过RegExp类型来支持正则表达式 1var express&#x3D;&#x2F; pattern &#x2F; flags;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js复习">
 <meta property="og:url" content="http://yoursite.com/2020/07/25/js%E5%A4%8D%E4%B9%A0/index.html">
 <meta property="og:site_name" content="啥都不会啊">
-<meta property="og:description" content="RegExp类型ECMAScript通过Regexp类型来支持正则表达式 1var express&#x3D;&#x2F; pattern &#x2F; flags;">
+<meta property="og:description" content="RegExp类型ECMAScript通过RegExp类型来支持正则表达式 1var express&#x3D;&#x2F; pattern &#x2F; flags;">
 <meta property="og:locale" content="ch_ZN">
 <meta property="article:published_time" content="2020-07-25T00:44:37.000Z">
-<meta property="article:modified_time" content="2020-07-25T04:39:35.472Z">
+<meta property="article:modified_time" content="2020-07-25T06:42:25.950Z">
 <meta property="article:author" content="高宁">
 <meta property="article:tag" content="正则表达式">
 <meta property="article:tag" content="js高级教程学习笔记">
@@ -189,10 +189,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="RegExp类型"><a href="#RegExp类型" class="headerlink" title="RegExp类型"></a>RegExp类型</h2><p><code>ECMAScript</code>通过<code>Regexp</code>类型来支持正则表达式</p>
+        <h2 id="RegExp类型"><a href="#RegExp类型" class="headerlink" title="RegExp类型"></a>RegExp类型</h2><p><code>ECMAScript</code>通过<code>RegExp</code>类型来支持正则表达式</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express=<span class="regexp">/ pattern /</span> flags;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h3 id="正则表达式的匹配模式支持下列3个标志"><a href="#正则表达式的匹配模式支持下列3个标志" class="headerlink" title="正则表达式的匹配模式支持下列3个标志"></a>正则表达式的匹配模式支持下列3个标志</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g:表示全局（global）模式，即模式被应用于所有字符串，而不是在遇到第一个匹配项立即停止</span><br><span class="line">i：表示不区分大小写（case-insensitive)模式</span><br><span class="line">m：表示多行（multiline）模式，即在一行到达文本末尾时还会继续查找下一行</span><br></pre></td></tr></table></figure>
+
 <h3 id="模式中使用的所有元字符都必须转义，元字符包括"><a href="#模式中使用的所有元字符都必须转义，元字符包括" class="headerlink" title="模式中使用的所有元字符都必须转义，元字符包括"></a>模式中使用的所有元字符都必须转义，元字符包括</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">( [ &#123; \ ^ $ | ? * + .&#125; ] )</span><br></pre></td></tr></table></figure>
 
 <h3 id="创建正则表达式两种方式"><a href="#创建正则表达式两种方式" class="headerlink" title="创建正则表达式两种方式"></a>创建正则表达式两种方式</h3><p>字面量模式：</p>
