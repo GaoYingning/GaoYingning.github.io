@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>继承 | 啥都不会啊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ECMAScript实现继承主要是依赖原型链。 原型链基本思想是利用原型让一个引用类型继承另一个引用类型的属性和方法。每个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，而实例都包含一个指向原型对象的内部指针。 假如让原型对象等于另一个类型的实例，此时原型对象就会包含一个指向另一个原型的指针，另一个原型中也会包含一个指向另一个构造函数的指针，层层递进。这就是原型链的基本概念 基本模">
+  <meta name="description" content="ECMAScript实现继承主要是依赖原型链。 原型链基本思想是利用原型让一个引用类型继承另一个引用类型的属性和方法。每个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，而实例都包含一个指向原型对象的内部指针。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="继承">
 <meta property="og:url" content="http://yoursite.com/2020/07/27/%E7%BB%A7%E6%89%BF/index.html">
 <meta property="og:site_name" content="啥都不会啊">
-<meta property="og:description" content="ECMAScript实现继承主要是依赖原型链。 原型链基本思想是利用原型让一个引用类型继承另一个引用类型的属性和方法。每个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，而实例都包含一个指向原型对象的内部指针。 假如让原型对象等于另一个类型的实例，此时原型对象就会包含一个指向另一个原型的指针，另一个原型中也会包含一个指向另一个构造函数的指针，层层递进。这就是原型链的基本概念 基本模">
+<meta property="og:description" content="ECMAScript实现继承主要是依赖原型链。 原型链基本思想是利用原型让一个引用类型继承另一个引用类型的属性和方法。每个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，而实例都包含一个指向原型对象的内部指针。">
 <meta property="og:locale" content="ch_ZN">
 <meta property="og:image" content="http://yoursite.com/2020/07/27/%E7%BB%A7%E6%89%BF/%E7%BB%A7%E6%89%BF.png">
 <meta property="og:image" content="http://yoursite.com/2020/07/27/%E7%BB%A7%E6%89%BF/%E5%AE%8C%E6%95%B4.png">
 <meta property="og:image" content="http://yoursite.com/2020/07/27/%E7%BB%A7%E6%89%BF/%E7%BB%84%E5%90%88%E7%BB%A7%E6%89%BF.png">
 <meta property="article:published_time" content="2020-07-27T00:35:46.000Z">
-<meta property="article:modified_time" content="2020-07-27T06:34:35.927Z">
+<meta property="article:modified_time" content="2020-07-27T06:51:19.933Z">
 <meta property="article:author" content="高宁">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/2020/07/27/%E7%BB%A7%E6%89%BF/%E7%BB%A7%E6%89%BF.png">
@@ -192,6 +192,7 @@
       
         <p>ECMAScript实现继承主要是依赖原型链。</p>
 <h3 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h3><p>基本思想是利用原型让一个引用类型继承另一个引用类型的属性和方法。<br>每个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，而实例都包含一个指向原型对象的内部指针。</p>
+<a id="more"></a>
 <p>假如让原型对象等于另一个类型的实例，此时原型对象就会包含一个指向另一个原型的指针，另一个原型中也会包含一个指向另一个构造函数的指针，层层递进。<br>这就是原型链的基本概念</p>
 <p>基本模式</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.property=<span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line">SuperType.prototype.getSuperValue=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.property;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.subproperty=<span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//继承了SuperType</span></span><br><span class="line">SubType.prototype=<span class="keyword">new</span> SuperType();</span><br><span class="line"></span><br><span class="line">SubType.prototype.getSubValue=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.subproperty;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> instance=<span class="keyword">new</span> SubType();</span><br><span class="line"><span class="built_in">console</span>.log(instance.getSuperValue());  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
