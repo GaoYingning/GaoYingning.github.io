@@ -6,16 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 啥都不会啊</title>
+  <title>es6字符串 | 啥都不会啊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="努力啊">
-<meta property="og:type" content="website">
-<meta property="og:title" content="啥都不会啊">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+  <meta name="description" content="模板字符串模板字符串是增强版的字符串，用反引号(&#96;)标识，它可以当作普通字符串使用，也可以用来定义多行字符串，或者在字符串中嵌入变量。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="es6字符串">
+<meta property="og:url" content="http://yoursite.com/2020/08/11/es6%E5%AD%97%E7%AC%A6%E4%B8%B2/index.html">
 <meta property="og:site_name" content="啥都不会啊">
-<meta property="og:description" content="努力啊">
+<meta property="og:description" content="模板字符串模板字符串是增强版的字符串，用反引号(&#96;)标识，它可以当作普通字符串使用，也可以用来定义多行字符串，或者在字符串中嵌入变量。">
 <meta property="og:locale" content="ch_ZN">
+<meta property="article:published_time" content="2020-08-11T08:38:17.000Z">
+<meta property="article:modified_time" content="2020-08-11T09:38:13.716Z">
 <meta property="article:author" content="高宁">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="es6">
+<meta property="article:tag" content="字符串">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="啥都不会啊" type="application/atom+xml">
@@ -164,56 +169,99 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-es6字符串" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/25/js%E5%A4%8D%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2020-07-25T00:44:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-25</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/25/js%E5%A4%8D%E4%B9%A0/">js复习</a>
+    <h1 class="article-title" itemprop="name">
+      es6字符串
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/08/11/es6%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="archive-article-date">
+  	<time datetime="2020-08-11T08:38:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3><p>模板字符串是增强版的字符串，用反引号(`)标识，它可以当作普通字符串使用，也可以用来定义多行字符串，或者在字符串中嵌入变量。</p>
+<a id="more"></a>
+<p>模板字符串的空格和换行都是被保留的。</p>
+<p>模板字符串中嵌入变量，需要将变量名写在${}之中。 大括号内部可以放入任意的js表达式，可以进行运输，以及引用对象属性，调用函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> y=<span class="number">2</span>;</span><br><span class="line"><span class="string">`<span class="subst">$&#123;x&#125;</span>+<span class="subst">$&#123;y&#125;</span>=<span class="subst">$&#123;x+y&#125;</span>`</span></span><br><span class="line"><span class="comment">//1+2=3</span></span><br><span class="line"><span class="string">`<span class="subst">$&#123;x&#125;</span>+<span class="subst">$&#123;y*<span class="number">2</span>&#125;</span>=<span class="subst">$&#123;x+y*<span class="number">2</span>&#125;</span>`</span></span><br><span class="line"><span class="comment">//1+4=5</span></span><br><span class="line"><span class="keyword">let</span> obj=&#123;<span class="attr">x</span>:<span class="number">1</span>,<span class="attr">y</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="string">`<span class="subst">$&#123;obj.x+obj.y&#125;</span>`</span></span><br><span class="line"><span class="comment">//3</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"hello world"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="string">`foo <span class="subst">$&#123;fn()&#125;</span> bar`</span></span><br><span class="line"><span class="comment">//foo hello world bar</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> func=<span class="function">(<span class="params">name</span>)=&gt;</span><span class="string">`hello <span class="subst">$&#123;name&#125;</span>`</span></span><br><span class="line">func(<span class="string">'jack'</span>)<span class="comment">//hello jack</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="模板编译"><a href="#模板编译" class="headerlink" title="模板编译"></a>模板编译</h3><h3 id="标签模板"><a href="#标签模板" class="headerlink" title="标签模板"></a>标签模板</h3><p>它可以紧跟在一个函数名后面，该函数将被调用来处理这个模板字符串</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alert<span class="string">`hello`</span></span><br><span class="line"><span class="comment">//等同于</span></span><br><span class="line">alert([<span class="string">'hello'</span>])</span><br></pre></td></tr></table></figure>
+<p>标签模板其实是函数调用的一种特殊形式，标签指的就是函数，紧跟在后面的模板字符串就是它的参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a=<span class="number">5</span>;</span><br><span class="line"><span class="keyword">let</span> b=<span class="number">10</span>;</span><br><span class="line">tag<span class="string">`hello <span class="subst">$&#123;a+b&#125;</span> world <span class="subst">$&#123;a*b&#125;</span>`</span>;</span><br><span class="line"><span class="comment">//等同于</span></span><br><span class="line">tag([<span class="string">'hello'</span>,<span class="string">'world'</span>,<span class="string">''</span>],<span class="number">15</span>,<span class="number">50</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tag</span>(<span class="params">stringArr,value1,value2</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//等同于</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tag</span>(<span class="params">stringArr,...values</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// tag函数的实际参数</span></span><br><span class="line"><span class="comment">// 第一个参数 ['hello',' world','']</span></span><br><span class="line"><span class="comment">//第二个参数   15</span></span><br><span class="line"><span class="comment">// 第三个参数  50</span></span><br></pre></td></tr></table></figure>
+<p>模板字符串前面有一个标识名tag，它是一个函数。整个表达式的返回值，就是tag函数处理模板字符串后的返回值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> total=<span class="number">30</span>;</span><br><span class="line"><span class="keyword">let</span> msg=passthru<span class="string">`the total is <span class="subst">$&#123;total&#125;</span> (<span class="subst">$&#123;total*<span class="number">1.05</span>&#125;</span> with tax)`</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">passthru</span>(<span class="params">literals</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> result=<span class="string">''</span>;</span><br><span class="line">    <span class="keyword">let</span> i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;literals.length)&#123;</span><br><span class="line">        <span class="comment">//raw属性保存转义后的原字符串</span></span><br><span class="line">        <span class="comment">//["the total is "," ("," with tax)"]</span></span><br><span class="line">        result+=literals[i++];</span><br><span class="line">        <span class="keyword">if</span>(i&lt;<span class="built_in">arguments</span>.length)&#123;</span><br><span class="line">            <span class="comment">//["the total is "," ("," with tax"],30,31.5</span></span><br><span class="line">            result+=<span class="built_in">arguments</span>[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line">msg<span class="comment">//the total is 30 (31.5 with tax)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="标签模板的一个重要应用，过滤HTML字符串，防止用户输入恶意内容"><a href="#标签模板的一个重要应用，过滤HTML字符串，防止用户输入恶意内容" class="headerlink" title="标签模板的一个重要应用，过滤HTML字符串，防止用户输入恶意内容"></a>标签模板的一个重要应用，过滤HTML字符串，防止用户输入恶意内容</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SafeHTML</span>(<span class="params">templateData</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> s=templateData[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;<span class="built_in">arguments</span>.length;i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> arg=<span class="built_in">String</span>(<span class="built_in">arguments</span>[i]);</span><br><span class="line">        <span class="comment">//Escape special characters in the substitution</span></span><br><span class="line">        s+=arg.replace(<span class="regexp">/&amp;/g</span>,<span class="string">"&amp;amp;"</span>)</span><br><span class="line">              .replace(<span class="regexp">/&lt;/g</span>,<span class="string">"&amp;lt;"</span>)</span><br><span class="line">              .replace(<span class="regexp">/&gt;/g</span>,<span class="string">"&amp;gt;"</span>);</span><br><span class="line">        <span class="comment">//don't escape special characters in the template</span></span><br><span class="line">        s+=templateData[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//sender 变量由用户提供，经过SafeHTML函数处理，里面的特殊字符都会被转义</span></span><br><span class="line"><span class="keyword">let</span> sender=<span class="string">'&lt;script&gt;alert("abc")&lt;/script&gt;'</span>;<span class="comment">//恶意代码</span></span><br><span class="line"><span class="keyword">let</span> message=SafeHTML<span class="string">`&lt;p&gt;<span class="subst">$&#123;sender&#125;</span> has sent you a message&lt;/p&gt;`</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="多语言转换-国际化处理"><a href="#多语言转换-国际化处理" class="headerlink" title="多语言转换(国际化处理)"></a>多语言转换(国际化处理)</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i18n<span class="string">`Welcome to <span class="subst">$&#123;siteName&#125;</span>,you are visitor numer <span class="subst">$&#123;visitorNumber&#125;</span>!`</span>;</span><br></pre></td></tr></table></figure>
+
+<p>模板字符串本身并不能取代Mustache之类的模板库，因为没有条件判断和循环处理功能，但是通过标签函数，你可以自己添加这些功能</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> libraryHtml=hashTemplate<span class="string">`</span></span><br><span class="line"><span class="string">    &lt;ul&gt;</span></span><br><span class="line"><span class="string">        #for book in <span class="subst">$&#123;myBooks&#125;</span></span></span><br><span class="line"><span class="string">            &lt;li&gt;&lt;i&gt;#&#123;book.title&#125;&lt;/i&gt; by #&#123;book.author&#125;&lt;/li&gt;</span></span><br><span class="line"><span class="string">        #end</span></span><br><span class="line"><span class="string">    &lt;/ul&gt;</span></span><br><span class="line"><span class="string">`</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="模板字符串的限制"><a href="#模板字符串的限制" class="headerlink" title="模板字符串的限制"></a>模板字符串的限制</h3><p>标签模板里面可以嵌套其他语言，但是模板字符串默认会将字符串转义，导致无法嵌入其他语言</p>
+<h3 id="字符串新增方法"><a href="#字符串新增方法" class="headerlink" title="字符串新增方法"></a>字符串新增方法</h3><p>1、String.fromCodePoint()<br>es5提供的String.fromCharCode()方法，用于从Unicode码点返回对应字符，但这个方法不能识别码点大于0xFFFF的字符</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>.fromCodePoint(<span class="number">0x20BB7</span>)</span><br><span class="line"><span class="comment">//"吉"</span></span><br><span class="line"><span class="built_in">String</span>.fromCodePoint(<span class="number">0x78</span>,<span class="number">0x1f680</span>,<span class="number">0x79</span>)===<span class="string">'x\uD83D\uDE80y'</span></span><br><span class="line"><span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p>该方法与codePointAt()作用相反，fromCodePoint()方法定义在String对象上，而CodePointAt()方法定义在字符串的实例对象上。</p>
+<p>2、String.raw()<br>该方法返回一个斜杠都被转义(即斜杠前面在加一个斜杠)的字符串，往往用于模板字符串的处理方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>.raw<span class="string">`Hi\n<span class="subst">$&#123;<span class="number">2</span>+<span class="number">3</span>&#125;</span>!`</span></span><br><span class="line"><span class="comment">//实际返回“hi\\n5!"，显示的是转义后的结果"hi\n5!"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">String</span>.raw<span class="string">`hi\u000A!`</span>;</span><br><span class="line"><span class="comment">//实际返回"hi\\u000A!",显示的是转义后的结果"hi\u000A!'</span></span><br></pre></td></tr></table></figure>
+<p>String.raw()的代码实现基本如下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//`foo$&#123;1+2&#125;bar`</span></span><br><span class="line"><span class="built_in">String</span>.raw(&#123;<span class="attr">raw</span>:[<span class="string">'foo'</span>,<span class="string">'bar'</span>]&#125;,<span class="number">1</span>+<span class="number">2</span>)<span class="comment">//foo3bar</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">String</span>.raw=<span class="function"><span class="keyword">function</span>(<span class="params">strings,...values</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> output=<span class="string">''</span>;</span><br><span class="line">    <span class="keyword">let</span> index;</span><br><span class="line">    <span class="keyword">for</span>(index=<span class="number">0</span>;index&lt;values.length;index++)&#123;</span><br><span class="line">        output+=strings.raw[index]+values[index];</span><br><span class="line">    &#125;</span><br><span class="line">    output+=strings.raw[index]</span><br><span class="line">    <span class="keyword">return</span> output;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3、实例方法：codePointAt()<br>es6提供了codePointAt()方法，能够正确处理4个字节存储的字符，返回一个字符的码点</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s=<span class="string">"吉"</span>;</span><br><span class="line">s.length<span class="comment">//2</span></span><br><span class="line">s.charAt(<span class="number">0</span>)<span class="comment">//""</span></span><br><span class="line">s.charAt(<span class="number">1</span>)<span class="comment">//""</span></span><br><span class="line">s.charCodeAt(<span class="number">0</span>)<span class="comment">//55362</span></span><br><span class="line">s.charCodeAt(<span class="number">1</span>)<span class="comment">//57271</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> s=<span class="string">"吉a"</span>;</span><br><span class="line">s.codePointAt(<span class="number">0</span>)<span class="comment">//134071</span></span><br><span class="line">s.codePointAt(<span class="number">1</span>)<span class="comment">//57271</span></span><br><span class="line">s.codePointAt(<span class="number">2</span>)<span class="comment">//97</span></span><br></pre></td></tr></table></figure>
+<p>总之，codePointAt()方法会正确返回32位的UTF-16字符的码点，对于那些两个字节存储的常规字符，它的返回结果与charCodeAt()方法相同</p>
+<p>codePointAt()方法是测试一个字符由两个字节还是由四个字节组成的最简单方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">is32Bit</span>(<span class="params">c</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> c.codePointAt(<span class="number">0</span>)&gt;<span class="number">0xFFFF</span>;</span><br><span class="line">&#125;</span><br><span class="line">is32Bit(<span class="string">"吉"</span>)<span class="comment">//true,不是吉祥的吉</span></span><br><span class="line">is32Bit(<span class="string">"a"</span>)<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<p>4、实例方法：normalize()<br>该方法用来将字符的不同表示方法统一为同样的形式，称为Unicode正规化</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'\u01D1'</span>.normailze()===<span class="string">'\u004F\u030C'</span>.normailze()</span><br><span class="line"><span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<p>5、实例方法:includes(),startWith(),endsWith()<br>includes()：返回布尔值，表示是否找到了参数字符串<br>startWith():返回布尔值，表示参数字符串是否在原字符串的头部<br>endsWith():返回布尔值，表示参数字符串是否在原字符串的尾部</p>
+<p>6、实例方法：repeat()<br>该方法返回一个新字符串，表示将原字符串重复n次<br>参数不能为负数和infinite，NaN等同于0</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'x'</span>.repeat(<span class="number">3</span>)<span class="comment">//"xxx"</span></span><br><span class="line"><span class="string">'na'</span>.repeat(<span class="number">0</span>)<span class="comment">//""</span></span><br><span class="line"><span class="string">'na'</span>.repeat(<span class="number">2.9</span>)<span class="comment">//"nana"</span></span><br></pre></td></tr></table></figure>
+
+<p>7、实例方法：padStart(),padEnd()<br>如果某个字符串不够指定长度，padStart()方法会在头部补全，padEnd()方法会在尾部补全<br>若原字符串的长度，等于或大于最大长度，则字符串补全不生效，返回原字符串<br>若用来补全的字符串与原字符串，两者长度之和超过了最大长度，则会截去超出位数的补全字符串<br>若省略第二个参数，默认使用空格补全长度</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'x'</span>.padStart(<span class="number">5</span>,<span class="string">'ab'</span>)<span class="comment">//'ababx'</span></span><br><span class="line"><span class="string">'x'</span>.padStart(<span class="number">4</span>,<span class="string">'ab'</span>)<span class="comment">//'abax'</span></span><br><span class="line"><span class="string">'x'</span>.padEnd(<span class="number">5</span>,<span class="string">'ab'</span>)<span class="comment">//'xabab'</span></span><br><span class="line"></span><br><span class="line"><span class="string">'1'</span>.padStart(<span class="number">10</span>,<span class="string">'0'</span>)<span class="comment">//0000000001</span></span><br><span class="line"><span class="string">'123456'</span>.padStart(<span class="number">10</span>,<span class="string">'0'</span>)<span class="comment">//0000123456</span></span><br><span class="line"></span><br><span class="line"><span class="string">'12'</span>.padStart(<span class="number">10</span>,<span class="string">'YYYY-MM-DD'</span>)<span class="comment">//YYYY-MM-12</span></span><br><span class="line"><span class="string">'09-12'</span>.padStart(<span class="number">10</span>,<span class="string">'YYYY-MM-DD'</span>)<span class="comment">//YYYY-09-12</span></span><br></pre></td></tr></table></figure>
+
+<p>8、实例方法：trimStart(),trimEnd()<br>trimStart()方法消除字符串头部的空格<br>trimEnd()方法消除尾部的空格，它们返回的都是新字符串，不会修改原字符串<br>该方法也会对tab键、换行等不可见的空白符合也有效</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">正则表达式</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">js高级程序设计</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">es6</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字符串</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -226,69 +274,103 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/11/es6%E5%AD%97%E7%AC%A6%E4%B8%B2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/24/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-07-24T14:00:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-24</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/08/10/%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%9503/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">每日算法03</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/24/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">第一篇博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+
+  
+
   
 
 
@@ -309,8 +391,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
