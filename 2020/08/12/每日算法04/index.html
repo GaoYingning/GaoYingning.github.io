@@ -6,16 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 面向对象 | 啥都不会啊</title>
+  <title>每日算法04 | 啥都不会啊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="努力啊">
-<meta property="og:type" content="website">
-<meta property="og:title" content="啥都不会啊">
-<meta property="og:url" content="http://yoursite.com/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.html">
+  <meta name="description" content="请实现一个函数按照之字形打印二叉树，即第一行按照从左到右的顺序打印，第二层按照从右至左的顺序打印，第三行按照从左到右的顺序打印，其他行以此类推。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每日算法04">
+<meta property="og:url" content="http://yoursite.com/2020/08/12/%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%9504/index.html">
 <meta property="og:site_name" content="啥都不会啊">
-<meta property="og:description" content="努力啊">
+<meta property="og:description" content="请实现一个函数按照之字形打印二叉树，即第一行按照从左到右的顺序打印，第二层按照从右至左的顺序打印，第三行按照从左到右的顺序打印，其他行以此类推。">
 <meta property="og:locale" content="ch_ZN">
+<meta property="article:published_time" content="2020-08-12T00:08:56.000Z">
+<meta property="article:modified_time" content="2020-08-12T00:50:21.076Z">
 <meta property="article:author" content="高宁">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="树">
+<meta property="article:tag" content="二叉树">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="啥都不会啊" type="application/atom+xml">
@@ -164,79 +169,169 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-每日算法04" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/08/11/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="archive-article-date">
-  	<time datetime="2020-08-11T12:06:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-11</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/11/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">面向对象</a>
+    <h1 class="article-title" itemprop="name">
+      每日算法04
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/08/12/%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%9504/" class="archive-article-date">
+  	<time datetime="2020-08-12T00:08:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>请实现一个函数按照之字形打印二叉树，即第一行按照从左到右的顺序打印，<br>第二层按照从右至左的顺序打印，第三行按照从左到右的顺序打印，其他行以此类推。</p>
+<a id="more"></a>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    TreeNode left;</span><br><span class="line">    TreeNode right;</span><br><span class="line">    TreeNode(<span class="keyword">int</span> x)&#123;val=x;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> ArrayList&lt;ArrayList&lt;Integer&gt;&gt; Print(TreeNode pRoot)&#123;</span><br><span class="line">    ArrayList&lt;ArrayList&lt;Integer&gt;&gt; arrayLists=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span> (pRoot==<span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> arrayLists;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//创建两个栈，表示在不同行分别从左往右读，从右往左读</span></span><br><span class="line">    Stack&lt;TreeNode&gt; stackl=<span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">    Stack&lt;TreeNode&gt; stackr=<span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">    <span class="comment">//将根节点放入stackr，默认根节点为从左往右读</span></span><br><span class="line">    stackr.push(pRoot);</span><br><span class="line">    ArrayList&lt;Integer&gt; root=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    root.add(pRoot.val);</span><br><span class="line">    <span class="comment">//将根节点值放入结果列表中</span></span><br><span class="line">    arrayLists.add(root);</span><br><span class="line">    <span class="comment">//当两个栈有不为空的时候，说明还没有遍历完</span></span><br><span class="line">    <span class="keyword">while</span> (!stackl.empty()||!stackr.empty())&#123;</span><br><span class="line">        ArrayList&lt;Integer&gt; arrayL=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="comment">//当stackr不为空的时候，说明从右往左遍历过程还没遍历完</span></span><br><span class="line">        <span class="keyword">while</span> (!stackr.empty())&#123;</span><br><span class="line">            <span class="comment">//根据栈的先入后出特性</span></span><br><span class="line">            <span class="comment">//每次遍历都将stackr顶部值弹出，然后将该节点值的右孩子和左孩子分别压入stackl</span></span><br><span class="line">            <span class="comment">//说明该节点已遍历，它的左右孩子需要从另一个方向即从左到右遍历。</span></span><br><span class="line">            <span class="comment">//将每个节点值放入arrayL中</span></span><br><span class="line">            TreeNode node=stackr.pop();</span><br><span class="line">            <span class="keyword">if</span>(node.right!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                stackl.push(node.right);</span><br><span class="line">                arrayL.add(node.right.val);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(node.left!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                stackl.push(node.left);</span><br><span class="line">                arrayL.add(node.left.val);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//若arrayL不为空，说明这一行存在数据，然后将其加入结果列表</span></span><br><span class="line">        <span class="keyword">if</span>(!arrayL.isEmpty())arrayLists.add(arrayL);</span><br><span class="line">        ArrayList&lt;Integer&gt; arrayR=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="comment">//当stackl不空的时候，说明从左往右还没遍历完</span></span><br><span class="line">        <span class="keyword">while</span> (!stackl.empty())&#123;</span><br><span class="line">            <span class="comment">//此时，上一行从右往左已经遍历完成，这一行数据需要从左往右遍历</span></span><br><span class="line">            <span class="comment">//根据栈的性质，弹出顶部的节点，然后将该节点的左孩子和右孩子分别压入stackr，以便下一行从右往左遍历</span></span><br><span class="line">            <span class="comment">//将每个节点值放入arrayR中</span></span><br><span class="line">            TreeNode node=stackl.pop();</span><br><span class="line">            <span class="keyword">if</span>(node.left!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                stackr.push(node.left);</span><br><span class="line">                arrayR.add(node.left.val);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(node.right!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                stackr.push(node.right);</span><br><span class="line">                arrayR.add(node.right.val);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//若arrayR不为空，说明这一行存在数据，然后将其加入结果列表</span></span><br><span class="line">        <span class="keyword">if</span>(!arrayR.isEmpty())arrayLists.add(arrayR);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arrayLists;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>从上到下按层打印二叉树，同一层结点从左至右输出。每一层输出一行。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> ArrayList&lt;ArrayList&lt;Integer&gt;&gt; Print1(TreeNode pRoot)&#123;</span><br><span class="line">    ArrayList&lt;ArrayList&lt;Integer&gt;&gt; arrayLists=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span>(pRoot==<span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> arrayLists;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//创建队列</span></span><br><span class="line">    Queue&lt;TreeNode&gt; queue=<span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    <span class="comment">//将头节点加入队列中</span></span><br><span class="line">    queue.add(pRoot);</span><br><span class="line">    <span class="comment">//当列表不空的时候，说明还没遍历完</span></span><br><span class="line">    <span class="comment">//根据队列的性质，先入先出</span></span><br><span class="line">    <span class="keyword">while</span> (!queue.isEmpty())&#123;</span><br><span class="line">        <span class="comment">//定义一个索引，判断每一行节点遍历是否完成</span></span><br><span class="line">        <span class="keyword">int</span> index=<span class="number">0</span>;</span><br><span class="line">        <span class="comment">//取得列表大小</span></span><br><span class="line">        <span class="keyword">int</span> size=queue.size();</span><br><span class="line">        ArrayList&lt;Integer&gt; arrayList=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="comment">//当索引小于列表大小时候，该行还没遍历完</span></span><br><span class="line">        <span class="keyword">while</span> (index++&lt;size)&#123;</span><br><span class="line">            <span class="comment">//删除并返回第一个元素</span></span><br><span class="line">            TreeNode node=queue.poll();</span><br><span class="line">            <span class="comment">//将该节点加入arraylist列表中，然后在队列中加入该节点的左右孩子。</span></span><br><span class="line">            arrayList.add(node.val);</span><br><span class="line">            <span class="keyword">if</span>(node.left!=<span class="keyword">null</span>)queue.add(node.left);</span><br><span class="line">            <span class="keyword">if</span>(node.right!=<span class="keyword">null</span>)queue.add(node.right);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//将arraylist加入结果列表中</span></span><br><span class="line">        arrayLists.add(arrayList);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arrayLists;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">js高级程序设计</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">树</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">面向对象</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二叉树</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/js//" class="article-tag-list-link color3">js</a>
+        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/12/%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%9504/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/08/11/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">面向对象</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -256,9 +351,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
